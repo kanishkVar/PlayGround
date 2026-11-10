@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, user-scalable=no" />
+  <title>Wildbound — Pocket Meadow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main id="app">
+    <canvas id="gameCanvas"></canvas>
+    <div class="shade"></div>
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✦</div><div><strong>WILDBOUND</strong><span>POCKET MEADOW</span></div></div>
+      <div class="top-actions"><button class="icon-btn" id="soundBtn" aria-label="Toggle sound">◔</button><button class="avatar">AK</button></div>
+    </header>
+
+    <section class="hud-left">
+      <div class="trainer-card glass">
+        <div class="trainer-avatar">AK</div><div class="trainer-copy"><span class="eyebrow">TRAINER</span><strong>Alex Kim</strong><div class="xp"><i></i></div><small>RANK 03 <b>·</b> 420 XP</small></div>
+        <div class="streak"><span>✦</span><strong id="streakValue">3</strong><small>day streak</small></div>
+      </div>
+      <div class="quest-card glass"><div class="quest-icon">✧</div><div><span class="eyebrow">DAILY QUEST</span><strong>Meet a new friend</strong><small><b id="questCount">1</b> / 3 discoveries</small></div><div class="quest-arrow">›</div></div>
+    </section>
+
+    <section class="hud-right">
+      <div class="weather glass"><span class="sun">☼</span><div><strong>72°</strong><small>Sunny · 10:42 AM</small></div></div>
+      <div class="compass glass"><span>N</span><div class="needle"></div><small>MEADOW LOOP</small></div>
+    </section>
+
+    <div class="location-pill glass"><span class="pin">⌖</span><span>WILLOWBROOK MEADOW</span><i></i><small>42 m</small></div>
+
+    <section class="bottom-ui">
+      <div class="tip glass"><span class="sparkle">✦</span><div><strong>Something rustled nearby...</strong><small>Move closer to discover what it is.</small></div></div>
+      <div class="bottom-row">
+        <div class="joystick" id="joystick"><div class="joy-ring"><div class="joy-knob"></div></div><span class="joy-label">MOVE</span></div>
+        <div class="quick-actions"><button class="round-action" id="bagBtn"><span>▣</span><small>BAG</small></button><button class="round-action capture-action" id="captureBtn"><span>✧</span><small>CAPTURE</small></button><button class="round-action" id="mapBtn"><span>⌘</span><small>MAP</small></button></div>
+      </div>
+    </section>
+
+    <div id="toast" class="toast"></div>
+    <div id="modal" class="modal hidden"><div class="modal-panel glass"><button class="close" id="closeModal">×</button><div id="modalContent"></div></div></div>
+    <div id="encounter" class="encounter hidden"><div class="encounter-card glass"><div class="encounter-top"><span class="eyebrow">WILD ENCOUNTER</span><button class="close" id="closeEncounter">×</button></div><div class="monster-large" id="monsterLarge">✦</div><h2 id="encounterName">Mosskin</h2><p id="encounterText">A curious little friend is waiting.</p><div class="encounter-stats"><span><b>●</b> Lv. 02</span><span><b>◆</b> Meadow</span></div><button class="primary" id="tossBtn">TOSS A LUMI BALL <span>→</span></button><button class="secondary" id="waveBtn">WAVE HELLO</button></div></div>
+  </main>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  <script src="game.js"></script>
+</body>
+</html>
